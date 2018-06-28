@@ -1,5 +1,14 @@
 const newID = require('short-id')
 
+const instructions = {
+  a: "GET /rude -> returns all stored comments as an array of objects",
+  b: "GET /rude:id -> returns a single comment resource",
+  c: "POST /rude -> creates a new comment resource; body must contain the fields in d",
+  d: {comment:'Something rude',source:'fake friend',damage:'300/1000'},
+  e: "PUT /rude/:id -> updates an existing comment resource (must contain above fields as well)",
+  f: "DELETE /rude/:id -> deletes a comment resource"
+}
+
 const nastyComments = [
 {id: newID.generate(),
 comment: 'You look really tired today.',
@@ -123,7 +132,12 @@ function deleteOne (id) {
   return response
 }
 
+function getInstructions () {
+  return instructions
+}
+
 module.exports = {
+  getInstructions,
   getAll,
   getOne,
   replaceOne,

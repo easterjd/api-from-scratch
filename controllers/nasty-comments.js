@@ -1,5 +1,10 @@
 const model = require('../model/nasty-comments')
 
+function printInstructions (req,res,next) {
+  const instructions = model.getInstructions()
+  res.status(200).json({instructions})
+}
+
 function getAll (req,res,next) {
   const limit = req.query.limit
   const data = model.getAll(limit)
@@ -44,6 +49,7 @@ function deleteOne (req,res,next) {
 }
 
 module.exports = {
+  printInstructions,
   getAll,
   getOne,
   createOne,
