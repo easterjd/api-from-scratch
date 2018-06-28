@@ -9,6 +9,4 @@ router.put('/:id', ctrl.replaceOne)
 router.delete('/:id', ctrl.deleteOne)
 
 
-module.exports = {
-  router
-}
+module.exports = router

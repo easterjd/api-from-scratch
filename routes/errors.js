@@ -10,6 +10,4 @@ router.use((err, req, res, next) => {
   res.status(status).json({error: err})
 })
 
-module.exports = {
-  router
-}
+module.exports = router
