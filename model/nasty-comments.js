@@ -103,7 +103,7 @@ function replaceOne (id, body) {
         if (damage) {
           comment.comment = newComment
           comment.source = source
-          comment.damange = damage
+          comment.damage = damage
           response = {data: comment}
         } else {
           response = {status: 400, message: "You need to include the emotional damage out of 1000 (i.e. '500/1000')"}
